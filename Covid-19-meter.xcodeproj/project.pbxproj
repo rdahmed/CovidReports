@@ -14,6 +14,23 @@
 		D3E558B528169B9C00EFF796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3E558B328169B9C00EFF796 /* LaunchScreen.storyboard */; };
 		D3E558C028169F9600EFF796 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558BF28169F9600EFF796 /* MainCoordinator.swift */; };
 		D3E558C228169FA600EFF796 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558C128169FA600EFF796 /* MainFactory.swift */; };
+		D3E558DD2816A96D00EFF796 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558DC2816A96D00EFF796 /* NetworkConstants.swift */; };
+		D3E558DF2816A9F400EFF796 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558DE2816A9F400EFF796 /* NetworkServiceProtocol.swift */; };
+		D3E558E12816AA5B00EFF796 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558E02816AA5B00EFF796 /* NetworkService.swift */; };
+		D3E558E32816AAEA00EFF796 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558E22816AAEA00EFF796 /* NetworkServiceError.swift */; };
+		D3E558E62816AB9400EFF796 /* HTTPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558E52816AB9400EFF796 /* HTTPConfig.swift */; };
+		D3E558E92816AC4700EFF796 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558E82816AC4700EFF796 /* Reachability.swift */; };
+		D3E558EC2816ACD000EFF796 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558EB2816ACD000EFF796 /* String+Utilities.swift */; };
+		D3E558EF2816AD4600EFF796 /* JSONTransportError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558EE2816AD4600EFF796 /* JSONTransportError.swift */; };
+		D3E558F12816AD7B00EFF796 /* JSONTransportProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558F02816AD7B00EFF796 /* JSONTransportProtocol.swift */; };
+		D3E558F32816ADD400EFF796 /* JSONTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558F22816ADD400EFF796 /* JSONTransport.swift */; };
+		D3E558F62816AE6F00EFF796 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558F52816AE6E00EFF796 /* Route.swift */; };
+		D3E558F82816AECA00EFF796 /* Route+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558F72816AECA00EFF796 /* Route+Path.swift */; };
+		D3E558FA2816AFB800EFF796 /* Optional+Unwrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558F92816AFB800EFF796 /* Optional+Unwrapped.swift */; };
+		D3E559052816B7EE00EFF796 /* CovidReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E559042816B7EE00EFF796 /* CovidReport.swift */; };
+		D3E559092816C3C100EFF796 /* LatestCovidReportServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E559082816C3C100EFF796 /* LatestCovidReportServiceProtocol.swift */; };
+		D3E5590B2816C3DA00EFF796 /* LatestCovidReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5590A2816C3DA00EFF796 /* LatestCovidReportService.swift */; };
+		D3E5590E2816C53600EFF796 /* LatestCovidReportDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5590D2816C53600EFF796 /* LatestCovidReportDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +43,23 @@
 		D3E558B628169B9C00EFF796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E558BF28169F9600EFF796 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		D3E558C128169FA600EFF796 /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
+		D3E558DC2816A96D00EFF796 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		D3E558DE2816A9F400EFF796 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		D3E558E02816AA5B00EFF796 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D3E558E22816AAEA00EFF796 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
+		D3E558E52816AB9400EFF796 /* HTTPConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPConfig.swift; sourceTree = "<group>"; };
+		D3E558E82816AC4700EFF796 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		D3E558EB2816ACD000EFF796 /* String+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
+		D3E558EE2816AD4600EFF796 /* JSONTransportError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTransportError.swift; sourceTree = "<group>"; };
+		D3E558F02816AD7B00EFF796 /* JSONTransportProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTransportProtocol.swift; sourceTree = "<group>"; };
+		D3E558F22816ADD400EFF796 /* JSONTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTransport.swift; sourceTree = "<group>"; };
+		D3E558F52816AE6E00EFF796 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		D3E558F72816AECA00EFF796 /* Route+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Route+Path.swift"; sourceTree = "<group>"; };
+		D3E558F92816AFB800EFF796 /* Optional+Unwrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrapped.swift"; sourceTree = "<group>"; };
+		D3E559042816B7EE00EFF796 /* CovidReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidReport.swift; sourceTree = "<group>"; };
+		D3E559082816C3C100EFF796 /* LatestCovidReportServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCovidReportServiceProtocol.swift; sourceTree = "<group>"; };
+		D3E5590A2816C3DA00EFF796 /* LatestCovidReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCovidReportService.swift; sourceTree = "<group>"; };
+		D3E5590D2816C53600EFF796 /* LatestCovidReportDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCovidReportDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +94,10 @@
 			children = (
 				D3E558BC28169BC300EFF796 /* App */,
 				D3E558BD28169BF100EFF796 /* Assets */,
+				D3E558DA2816A92800EFF796 /* Network */,
+				D3E559062816BC5000EFF796 /* Domain */,
 				D3E558BE28169F2F00EFF796 /* Main */,
+				D3E558EA2816ACAC00EFF796 /* Extensions */,
 				D3E558AE28169B9A00EFF796 /* Main.storyboard */,
 				D3E558B628169B9C00EFF796 /* Info.plist */,
 			);
@@ -92,6 +129,108 @@
 				D3E558C128169FA600EFF796 /* MainFactory.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		D3E558DA2816A92800EFF796 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D3E558E72816AC1F00EFF796 /* Reachability */,
+				D3E558DB2816A94900EFF796 /* NetworkService */,
+				D3E558E42816AB6900EFF796 /* HTTPConfig */,
+				D3E558ED2816AD1B00EFF796 /* JSONTransport */,
+				D3E558F42816AE6100EFF796 /* Route */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D3E558DB2816A94900EFF796 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				D3E558DC2816A96D00EFF796 /* NetworkConstants.swift */,
+				D3E558E22816AAEA00EFF796 /* NetworkServiceError.swift */,
+				D3E558DE2816A9F400EFF796 /* NetworkServiceProtocol.swift */,
+				D3E558E02816AA5B00EFF796 /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		D3E558E42816AB6900EFF796 /* HTTPConfig */ = {
+			isa = PBXGroup;
+			children = (
+				D3E558E52816AB9400EFF796 /* HTTPConfig.swift */,
+			);
+			path = HTTPConfig;
+			sourceTree = "<group>";
+		};
+		D3E558E72816AC1F00EFF796 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				D3E558E82816AC4700EFF796 /* Reachability.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		D3E558EA2816ACAC00EFF796 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D3E558EB2816ACD000EFF796 /* String+Utilities.swift */,
+				D3E558F92816AFB800EFF796 /* Optional+Unwrapped.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D3E558ED2816AD1B00EFF796 /* JSONTransport */ = {
+			isa = PBXGroup;
+			children = (
+				D3E558EE2816AD4600EFF796 /* JSONTransportError.swift */,
+				D3E558F02816AD7B00EFF796 /* JSONTransportProtocol.swift */,
+				D3E558F22816ADD400EFF796 /* JSONTransport.swift */,
+			);
+			path = JSONTransport;
+			sourceTree = "<group>";
+		};
+		D3E558F42816AE6100EFF796 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				D3E558F52816AE6E00EFF796 /* Route.swift */,
+				D3E558F72816AECA00EFF796 /* Route+Path.swift */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		D3E558FB2816B2B100EFF796 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D3E559042816B7EE00EFF796 /* CovidReport.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		D3E559062816BC5000EFF796 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D3E5590C2816C4F500EFF796 /* DTOs */,
+				D3E558FB2816B2B100EFF796 /* Entities */,
+				D3E559072816BFDC00EFF796 /* Services */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D3E559072816BFDC00EFF796 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D3E559082816C3C100EFF796 /* LatestCovidReportServiceProtocol.swift */,
+				D3E5590A2816C3DA00EFF796 /* LatestCovidReportService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D3E5590C2816C4F500EFF796 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				D3E5590D2816C53600EFF796 /* LatestCovidReportDTO.swift */,
+			);
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +304,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3E559052816B7EE00EFF796 /* CovidReport.swift in Sources */,
+				D3E5590E2816C53600EFF796 /* LatestCovidReportDTO.swift in Sources */,
+				D3E558EF2816AD4600EFF796 /* JSONTransportError.swift in Sources */,
+				D3E5590B2816C3DA00EFF796 /* LatestCovidReportService.swift in Sources */,
+				D3E559092816C3C100EFF796 /* LatestCovidReportServiceProtocol.swift in Sources */,
 				D3E558A928169B9A00EFF796 /* AppDelegate.swift in Sources */,
+				D3E558FA2816AFB800EFF796 /* Optional+Unwrapped.swift in Sources */,
+				D3E558F82816AECA00EFF796 /* Route+Path.swift in Sources */,
+				D3E558E32816AAEA00EFF796 /* NetworkServiceError.swift in Sources */,
+				D3E558F62816AE6F00EFF796 /* Route.swift in Sources */,
 				D3E558C228169FA600EFF796 /* MainFactory.swift in Sources */,
+				D3E558DF2816A9F400EFF796 /* NetworkServiceProtocol.swift in Sources */,
+				D3E558DD2816A96D00EFF796 /* NetworkConstants.swift in Sources */,
+				D3E558EC2816ACD000EFF796 /* String+Utilities.swift in Sources */,
 				D3E558C028169F9600EFF796 /* MainCoordinator.swift in Sources */,
 				D3E558AB28169B9A00EFF796 /* SceneDelegate.swift in Sources */,
+				D3E558F32816ADD400EFF796 /* JSONTransport.swift in Sources */,
+				D3E558E12816AA5B00EFF796 /* NetworkService.swift in Sources */,
+				D3E558E92816AC4700EFF796 /* Reachability.swift in Sources */,
+				D3E558F12816AD7B00EFF796 /* JSONTransportProtocol.swift in Sources */,
+				D3E558E62816AB9400EFF796 /* HTTPConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
