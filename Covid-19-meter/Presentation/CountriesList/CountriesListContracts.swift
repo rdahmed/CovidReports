@@ -13,6 +13,12 @@ protocol CountriesListViewModelOutputProtocol: AnyObject {
 }
 
 protocol CountriesListViewModelInputProtocol: AnyObject {
-    func fetchLatestCovidReports()
+    func fetchLatestCovidReports(completion: (() -> Void)?)
     func didTapOnCountry(_ index: Int)
+}
+
+extension CountriesListViewModelInputProtocol {
+    func fetchLatestCovidReports(completion: (() -> Void)? = nil) {
+        self.fetchLatestCovidReports(completion: completion)
+    }
 }

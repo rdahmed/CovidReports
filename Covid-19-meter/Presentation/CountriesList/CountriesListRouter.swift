@@ -10,9 +10,3 @@ import Foundation
 protocol CountriesListRouterProtocol: AnyObject {
     func showCountryCovidReport(_ report: CountryCovidReport)
 }
-
-class CountriesListRouter: CountriesListRouterProtocol {
-    func showCountryCovidReport(_ report: CountryCovidReport) {
-        // TODO: to be implemented
-    }
-}
