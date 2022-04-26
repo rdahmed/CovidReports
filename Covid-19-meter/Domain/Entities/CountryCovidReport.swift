@@ -1,5 +1,5 @@
 //
-//  CovidReport.swift
+//  CountryCovidReport.swift
 //  Covid-19-meter
 //
 //  Created by Radwa Ahmed on 25/04/2022.
@@ -7,12 +7,8 @@
 
 import Foundation
 
-struct CovidReport: Decodable {
-    let countries: [CountryCovidReport]
-}
-
 struct CountryCovidReport: Decodable {
-    let name: String
+    let countryName: String
     let population: Int
     let activeCases: Int
     let deaths: Int

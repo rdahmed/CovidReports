@@ -14,7 +14,7 @@ class LatestCovidReportService: LatestCovidReportServiceProtocol {
     
     private let jsonTransport = JSONTransport()
     
-    func getLatestCovidCases(completion: @escaping CompletionHandler<CovidReport>) {
+    func getLatestCovidCases(completion: @escaping CompletionHandler<[CountryCovidReport]>) {
         jsonTransport.get(LatestCovidReportDTO.self, route: .getLatestCovidCases) { result in
             switch result {
             case .success(let dto):

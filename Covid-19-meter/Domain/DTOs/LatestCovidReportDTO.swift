@@ -10,10 +10,10 @@ import Foundation
 struct LatestCovidReportDTO: Decodable {
     let countries: [String: CountryCovidReportWrapperDTO]
     
-    func mapToEntity() -> CovidReport {
+    func mapToEntity() -> [CountryCovidReport] {
         let countriesReportsDTO = self.countries.values.map { $0.all }
         let countries = countriesReportsDTO.map { $0.mapToEntity() }
-        return CovidReport(countries: countries)
+        return countries
     }
 }
 
@@ -33,7 +33,7 @@ struct CountryCovidReportDTO: Decodable {
     
     func mapToEntity() -> CountryCovidReport {
         .init(
-            name: self.country,
+            countryName: self.country,
             population: self.population,
             activeCases: self.confirmed,
             deaths: self.deaths,

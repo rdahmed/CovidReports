@@ -10,5 +10,5 @@ import Foundation
 protocol LatestCovidReportServiceProtocol: AnyObject {
     typealias CompletionHandler<T> = (Result<T, Error>) -> Void where T: Decodable
     
-    func getLatestCovidCases(completion: @escaping CompletionHandler<CovidReport>)
+    func getLatestCovidCases(completion: @escaping CompletionHandler<[CountryCovidReport]>)
 }
