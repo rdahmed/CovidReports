@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3DB943F2818294A00414439 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB943E2818294A00414439 /* CountriesListViewController.swift */; };
+		D3DB94412818295C00414439 /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB94402818295C00414439 /* CountriesListViewModel.swift */; };
+		D3DB94452818299000414439 /* CountriesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB94442818299000414439 /* CountriesListRouter.swift */; };
+		D3DB9447281829D200414439 /* CountriesListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB9446281829D200414439 /* CountriesListContracts.swift */; };
+		D3DB94492818717000414439 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB94482818717000414439 /* CountryTableViewCell.swift */; };
 		D3E558A928169B9A00EFF796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558A828169B9A00EFF796 /* AppDelegate.swift */; };
 		D3E558AB28169B9A00EFF796 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558AA28169B9A00EFF796 /* SceneDelegate.swift */; };
-		D3E558B028169B9A00EFF796 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3E558AE28169B9A00EFF796 /* Main.storyboard */; };
 		D3E558B228169B9C00EFF796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E558B128169B9C00EFF796 /* Assets.xcassets */; };
 		D3E558B528169B9C00EFF796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3E558B328169B9C00EFF796 /* LaunchScreen.storyboard */; };
 		D3E558C028169F9600EFF796 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558BF28169F9600EFF796 /* MainCoordinator.swift */; };
@@ -27,17 +31,21 @@
 		D3E558F62816AE6F00EFF796 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558F52816AE6E00EFF796 /* Route.swift */; };
 		D3E558F82816AECA00EFF796 /* Route+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558F72816AECA00EFF796 /* Route+Path.swift */; };
 		D3E558FA2816AFB800EFF796 /* Optional+Unwrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558F92816AFB800EFF796 /* Optional+Unwrapped.swift */; };
-		D3E559052816B7EE00EFF796 /* CovidReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E559042816B7EE00EFF796 /* CovidReport.swift */; };
+		D3E559052816B7EE00EFF796 /* CountryCovidReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E559042816B7EE00EFF796 /* CountryCovidReport.swift */; };
 		D3E559092816C3C100EFF796 /* LatestCovidReportServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E559082816C3C100EFF796 /* LatestCovidReportServiceProtocol.swift */; };
 		D3E5590B2816C3DA00EFF796 /* LatestCovidReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5590A2816C3DA00EFF796 /* LatestCovidReportService.swift */; };
 		D3E5590E2816C53600EFF796 /* LatestCovidReportDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5590D2816C53600EFF796 /* LatestCovidReportDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D3DB943E2818294A00414439 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
+		D3DB94402818295C00414439 /* CountriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
+		D3DB94442818299000414439 /* CountriesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListRouter.swift; sourceTree = "<group>"; };
+		D3DB9446281829D200414439 /* CountriesListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListContracts.swift; sourceTree = "<group>"; };
+		D3DB94482818717000414439 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		D3E558A528169B9A00EFF796 /* Covid-19-meter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid-19-meter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E558A828169B9A00EFF796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3E558AA28169B9A00EFF796 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D3E558AF28169B9A00EFF796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3E558B128169B9C00EFF796 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3E558B428169B9C00EFF796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3E558B628169B9C00EFF796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +64,7 @@
 		D3E558F52816AE6E00EFF796 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		D3E558F72816AECA00EFF796 /* Route+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Route+Path.swift"; sourceTree = "<group>"; };
 		D3E558F92816AFB800EFF796 /* Optional+Unwrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrapped.swift"; sourceTree = "<group>"; };
-		D3E559042816B7EE00EFF796 /* CovidReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidReport.swift; sourceTree = "<group>"; };
+		D3E559042816B7EE00EFF796 /* CountryCovidReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCovidReport.swift; sourceTree = "<group>"; };
 		D3E559082816C3C100EFF796 /* LatestCovidReportServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCovidReportServiceProtocol.swift; sourceTree = "<group>"; };
 		D3E5590A2816C3DA00EFF796 /* LatestCovidReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCovidReportService.swift; sourceTree = "<group>"; };
 		D3E5590D2816C53600EFF796 /* LatestCovidReportDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCovidReportDTO.swift; sourceTree = "<group>"; };
@@ -73,6 +81,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3DB943D2818291400414439 /* CountriesList */ = {
+			isa = PBXGroup;
+			children = (
+				D3DB944A28187E5000414439 /* Cell */,
+				D3DB94442818299000414439 /* CountriesListRouter.swift */,
+				D3DB9446281829D200414439 /* CountriesListContracts.swift */,
+				D3DB94402818295C00414439 /* CountriesListViewModel.swift */,
+				D3DB943E2818294A00414439 /* CountriesListViewController.swift */,
+			);
+			path = CountriesList;
+			sourceTree = "<group>";
+		};
+		D3DB944A28187E5000414439 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D3DB94482818717000414439 /* CountryTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		D3E5589C28169B9A00EFF796 = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +126,6 @@
 				D3E559062816BC5000EFF796 /* Domain */,
 				D3E558BE28169F2F00EFF796 /* Presentation */,
 				D3E558EA2816ACAC00EFF796 /* Extensions */,
-				D3E558AE28169B9A00EFF796 /* Main.storyboard */,
 				D3E558B628169B9C00EFF796 /* Info.plist */,
 			);
 			path = "Covid-19-meter";
@@ -127,6 +154,7 @@
 			children = (
 				D3E558BF28169F9600EFF796 /* MainCoordinator.swift */,
 				D3E558C128169FA600EFF796 /* MainFactory.swift */,
+				D3DB943D2818291400414439 /* CountriesList */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -201,7 +229,7 @@
 		D3E558FB2816B2B100EFF796 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				D3E559042816B7EE00EFF796 /* CovidReport.swift */,
+				D3E559042816B7EE00EFF796 /* CountryCovidReport.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -293,7 +321,6 @@
 			files = (
 				D3E558B528169B9C00EFF796 /* LaunchScreen.storyboard in Resources */,
 				D3E558B228169B9C00EFF796 /* Assets.xcassets in Resources */,
-				D3E558B028169B9A00EFF796 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +331,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3E559052816B7EE00EFF796 /* CovidReport.swift in Sources */,
+				D3E559052816B7EE00EFF796 /* CountryCovidReport.swift in Sources */,
+				D3DB94452818299000414439 /* CountriesListRouter.swift in Sources */,
 				D3E5590E2816C53600EFF796 /* LatestCovidReportDTO.swift in Sources */,
 				D3E558EF2816AD4600EFF796 /* JSONTransportError.swift in Sources */,
 				D3E5590B2816C3DA00EFF796 /* LatestCovidReportService.swift in Sources */,
@@ -315,14 +343,18 @@
 				D3E558E32816AAEA00EFF796 /* NetworkServiceError.swift in Sources */,
 				D3E558F62816AE6F00EFF796 /* Route.swift in Sources */,
 				D3E558C228169FA600EFF796 /* MainFactory.swift in Sources */,
+				D3DB9447281829D200414439 /* CountriesListContracts.swift in Sources */,
 				D3E558DF2816A9F400EFF796 /* NetworkServiceProtocol.swift in Sources */,
 				D3E558DD2816A96D00EFF796 /* NetworkConstants.swift in Sources */,
 				D3E558EC2816ACD000EFF796 /* String+Utilities.swift in Sources */,
 				D3E558C028169F9600EFF796 /* MainCoordinator.swift in Sources */,
 				D3E558AB28169B9A00EFF796 /* SceneDelegate.swift in Sources */,
+				D3DB94492818717000414439 /* CountryTableViewCell.swift in Sources */,
 				D3E558F32816ADD400EFF796 /* JSONTransport.swift in Sources */,
 				D3E558E12816AA5B00EFF796 /* NetworkService.swift in Sources */,
 				D3E558E92816AC4700EFF796 /* Reachability.swift in Sources */,
+				D3DB94412818295C00414439 /* CountriesListViewModel.swift in Sources */,
+				D3DB943F2818294A00414439 /* CountriesListViewController.swift in Sources */,
 				D3E558F12816AD7B00EFF796 /* JSONTransportProtocol.swift in Sources */,
 				D3E558E62816AB9400EFF796 /* HTTPConfig.swift in Sources */,
 			);
@@ -331,14 +363,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D3E558AE28169B9A00EFF796 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D3E558AF28169B9A00EFF796 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D3E558B328169B9C00EFF796 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -478,7 +502,7 @@
 				INFOPLIST_FILE = "Covid-19-meter/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -490,7 +514,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -506,7 +530,7 @@
 				INFOPLIST_FILE = "Covid-19-meter/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -518,7 +542,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
