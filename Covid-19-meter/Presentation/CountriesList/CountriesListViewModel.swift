@@ -11,7 +11,11 @@ class CountriesListViewModel {
     
     // MARK: - Dependencies
     
-    var countriesReports = [CountryCovidReport]()
+    var countriesReports = [CountryCovidReport]() {
+        didSet {
+            self.view?.update(reports: countriesReports)
+        }
+    }
     var errorMessage: String?
     
     // MARK: - Properties
@@ -19,13 +23,13 @@ class CountriesListViewModel {
     var view: CountriesListViewModelOutputProtocol?
     
     private let latestReportsService: LatestCovidReportServiceProtocol
-    private let router: CountriesListRouter
+    private let router: CountriesListRouterProtocol
     
     // MARK: - Initializers
     
     init(
         service: LatestCovidReportServiceProtocol = LatestCovidReportService.default,
-        router: CountriesListRouter
+        router: CountriesListRouterProtocol
     ) {
         self.latestReportsService = service
         self.router = router
@@ -41,26 +45,25 @@ class CountriesListViewModel {
 
 extension CountriesListViewModel: CountriesListViewModelInputProtocol {
     
-    func fetchLatestCovidReports() {
+    func fetchLatestCovidReports(completion: (() -> Void)?) {
         self.latestReportsService.getLatestCovidCases { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let reports):
-                self.countriesReports = reports
-                
-                let sortedReports = self.countriesReports.sorted { $0.countryName < $1.countryName }
-                self.view?.update(reports: sortedReports)
+                self.countriesReports = reports.sorted { $0.countryName < $1.countryName }
                 
             case .failure(let error):
                 self.view?.update(errorMessage: error.localizedDescription)
             }
+            
+            completion?()
         }
     }
     
     func didTapOnCountry(_ index: Int) {
-        print(#function, index)
-        // TODO: Route to next screen
+        let report = self.countriesReports[index]
+        self.router.showCountryCovidReport(report)
     }
     
 }

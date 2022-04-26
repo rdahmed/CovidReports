@@ -24,8 +24,6 @@ struct CountryCovidReport: Decodable {
     }
 }
 
-// FIXME: Move these to UIModel
-
 extension CountryCovidReport {
     
     var activeCasesFor100kHab: Int? {

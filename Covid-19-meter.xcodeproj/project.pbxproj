@@ -12,12 +12,16 @@
 		D3DB94452818299000414439 /* CountriesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB94442818299000414439 /* CountriesListRouter.swift */; };
 		D3DB9447281829D200414439 /* CountriesListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB9446281829D200414439 /* CountriesListContracts.swift */; };
 		D3DB94492818717000414439 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB94482818717000414439 /* CountryTableViewCell.swift */; };
+		D3DB944E28189DDB00414439 /* CountryReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB944D28189DDB00414439 /* CountryReportViewController.swift */; };
+		D3DB945028189DFF00414439 /* CountryReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB944F28189DFF00414439 /* CountryReportViewModel.swift */; };
+		D3DB945228189E2300414439 /* CountryReportContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB945128189E2300414439 /* CountryReportContracts.swift */; };
+		D3DB94542818A8DF00414439 /* ReportFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB94532818A8DF00414439 /* ReportFieldTableViewCell.swift */; };
+		D3DB94582818B4E100414439 /* DefaultNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB94572818B4E100414439 /* DefaultNavigationController.swift */; };
 		D3E558A928169B9A00EFF796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558A828169B9A00EFF796 /* AppDelegate.swift */; };
 		D3E558AB28169B9A00EFF796 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558AA28169B9A00EFF796 /* SceneDelegate.swift */; };
 		D3E558B228169B9C00EFF796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E558B128169B9C00EFF796 /* Assets.xcassets */; };
 		D3E558B528169B9C00EFF796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3E558B328169B9C00EFF796 /* LaunchScreen.storyboard */; };
 		D3E558C028169F9600EFF796 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558BF28169F9600EFF796 /* MainCoordinator.swift */; };
-		D3E558C228169FA600EFF796 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558C128169FA600EFF796 /* MainFactory.swift */; };
 		D3E558DD2816A96D00EFF796 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558DC2816A96D00EFF796 /* NetworkConstants.swift */; };
 		D3E558DF2816A9F400EFF796 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558DE2816A9F400EFF796 /* NetworkServiceProtocol.swift */; };
 		D3E558E12816AA5B00EFF796 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558E02816AA5B00EFF796 /* NetworkService.swift */; };
@@ -43,6 +47,11 @@
 		D3DB94442818299000414439 /* CountriesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListRouter.swift; sourceTree = "<group>"; };
 		D3DB9446281829D200414439 /* CountriesListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListContracts.swift; sourceTree = "<group>"; };
 		D3DB94482818717000414439 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		D3DB944D28189DDB00414439 /* CountryReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryReportViewController.swift; sourceTree = "<group>"; };
+		D3DB944F28189DFF00414439 /* CountryReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryReportViewModel.swift; sourceTree = "<group>"; };
+		D3DB945128189E2300414439 /* CountryReportContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryReportContracts.swift; sourceTree = "<group>"; };
+		D3DB94532818A8DF00414439 /* ReportFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFieldTableViewCell.swift; sourceTree = "<group>"; };
+		D3DB94572818B4E100414439 /* DefaultNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNavigationController.swift; sourceTree = "<group>"; };
 		D3E558A528169B9A00EFF796 /* Covid-19-meter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid-19-meter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E558A828169B9A00EFF796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3E558AA28169B9A00EFF796 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +59,6 @@
 		D3E558B428169B9C00EFF796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3E558B628169B9C00EFF796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3E558BF28169F9600EFF796 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		D3E558C128169FA600EFF796 /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
 		D3E558DC2816A96D00EFF796 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		D3E558DE2816A9F400EFF796 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		D3E558E02816AA5B00EFF796 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -99,6 +107,41 @@
 				D3DB94482818717000414439 /* CountryTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D3DB944B28189D6700414439 /* CountryReportDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D3DB944C28189D9100414439 /* Cell */,
+				D3DB945128189E2300414439 /* CountryReportContracts.swift */,
+				D3DB944F28189DFF00414439 /* CountryReportViewModel.swift */,
+				D3DB944D28189DDB00414439 /* CountryReportViewController.swift */,
+			);
+			path = CountryReportDetails;
+			sourceTree = "<group>";
+		};
+		D3DB944C28189D9100414439 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D3DB94532818A8DF00414439 /* ReportFieldTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D3DB94552818B4BD00414439 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D3E558BF28169F9600EFF796 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D3DB94562818B4C600414439 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				D3DB94572818B4E100414439 /* DefaultNavigationController.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 		D3E5589C28169B9A00EFF796 = {
@@ -152,9 +195,10 @@
 		D3E558BE28169F2F00EFF796 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D3E558BF28169F9600EFF796 /* MainCoordinator.swift */,
-				D3E558C128169FA600EFF796 /* MainFactory.swift */,
+				D3DB94562818B4C600414439 /* NavigationController */,
+				D3DB94552818B4BD00414439 /* Coordinator */,
 				D3DB943D2818291400414439 /* CountriesList */,
+				D3DB944B28189D6700414439 /* CountryReportDetails */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -332,17 +376,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3E559052816B7EE00EFF796 /* CountryCovidReport.swift in Sources */,
+				D3DB94582818B4E100414439 /* DefaultNavigationController.swift in Sources */,
+				D3DB945228189E2300414439 /* CountryReportContracts.swift in Sources */,
 				D3DB94452818299000414439 /* CountriesListRouter.swift in Sources */,
 				D3E5590E2816C53600EFF796 /* LatestCovidReportDTO.swift in Sources */,
+				D3DB945028189DFF00414439 /* CountryReportViewModel.swift in Sources */,
 				D3E558EF2816AD4600EFF796 /* JSONTransportError.swift in Sources */,
 				D3E5590B2816C3DA00EFF796 /* LatestCovidReportService.swift in Sources */,
 				D3E559092816C3C100EFF796 /* LatestCovidReportServiceProtocol.swift in Sources */,
+				D3DB94542818A8DF00414439 /* ReportFieldTableViewCell.swift in Sources */,
 				D3E558A928169B9A00EFF796 /* AppDelegate.swift in Sources */,
 				D3E558FA2816AFB800EFF796 /* Optional+Unwrapped.swift in Sources */,
 				D3E558F82816AECA00EFF796 /* Route+Path.swift in Sources */,
 				D3E558E32816AAEA00EFF796 /* NetworkServiceError.swift in Sources */,
 				D3E558F62816AE6F00EFF796 /* Route.swift in Sources */,
-				D3E558C228169FA600EFF796 /* MainFactory.swift in Sources */,
 				D3DB9447281829D200414439 /* CountriesListContracts.swift in Sources */,
 				D3E558DF2816A9F400EFF796 /* NetworkServiceProtocol.swift in Sources */,
 				D3E558DD2816A96D00EFF796 /* NetworkConstants.swift in Sources */,
@@ -356,6 +403,7 @@
 				D3DB94412818295C00414439 /* CountriesListViewModel.swift in Sources */,
 				D3DB943F2818294A00414439 /* CountriesListViewController.swift in Sources */,
 				D3E558F12816AD7B00EFF796 /* JSONTransportProtocol.swift in Sources */,
+				D3DB944E28189DDB00414439 /* CountryReportViewController.swift in Sources */,
 				D3E558E62816AB9400EFF796 /* HTTPConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,14 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let router = CountriesListRouter()
-        let viewModel = CountriesListViewModel(router: router)
-        let viewController = CountriesListViewController(viewModel: viewModel)
-        viewModel.view = viewController
-                
-        self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = viewController
-        self.window?.makeKeyAndVisible()
+        let window = UIWindow(windowScene: windowScene)
+        MainCoordinator(window: window).run()
+        
+        self.window = window
     }
 
 }

@@ -1,5 +1,5 @@
 //
-//  CountriesListViewController.swift
+//  CountryReportViewController.swift
 //  Covid-19-meter
 //
 //  Created by Radwa Ahmed on 26/04/2022.
@@ -7,18 +7,18 @@
 
 import UIKit
 
-class CountriesListViewController: UIViewController {
+class CountryReportViewController: UIViewController {
     
     // MARK: - Constants
     
     enum Constants {
-        static let countryCellId = "countryTableViewCell"
+        static let reportFieldCellId = "reportFieldCellId"
     }
     
-    // MARK: - Dependenceis
+    // MARK: - Dependencies
     
-    let viewModel: CountriesListViewModelInputProtocol
-    var reports: [CountryCovidReport] = [] {
+    let viewModel: CountryReportViewModelInputProtocol
+    var reportFields: [ReportFieldData] = [] {
         didSet {
             self.tableView.reloadData()
         }
@@ -27,11 +27,10 @@ class CountriesListViewController: UIViewController {
     // MARK: - Properties
     
     let tableView = UITableView(frame: .zero, style: .plain)
-    let refreshControl = UIRefreshControl()
     
     // MARK: - Initializers
     
-    init(viewModel: CountriesListViewModelInputProtocol) {
+    init(viewModel: CountryReportViewModelInputProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -53,40 +52,27 @@ class CountriesListViewController: UIViewController {
         self.setupLayout()
         self.setupConstraints()
         
-        self.viewModel.fetchLatestCovidReports()
-    }
-    
-}
-
-// MARK: - ViewModelOutput
-
-extension CountriesListViewController: CountriesListViewModelOutputProtocol {
-    
-    func update(reports: [CountryCovidReport]) {
-        self.reports = reports
-    }
-    
-    func update(errorMessage: String) {
-        print(errorMessage)
+        self.viewModel.fetchReportFields()
     }
     
 }
 
 // MARK: - UISetup
 
-private extension CountriesListViewController {
+private extension CountryReportViewController {
     
     func setupViews() {
+        self.tableView.isScrollEnabled = false
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.register(CountryTableViewCell.self, forCellReuseIdentifier: Constants.countryCellId)
-        
-        self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        self.tableView.register(
+            ReportFieldTableViewCell.self,
+            forCellReuseIdentifier: Constants.reportFieldCellId
+        )
     }
     
     func setupLayout() {
         view.addSubview(self.tableView)
-        self.tableView.refreshControl = self.refreshControl
     }
     
     func setupConstraints() {
@@ -99,25 +85,23 @@ private extension CountriesListViewController {
         ])
     }
     
-    @objc
-    private func refresh(_ refreshControl: UIRefreshControl) {
-        self.viewModel.fetchLatestCovidReports { [weak self] in
-            self?.refreshControl.endRefreshing()
-        }
-        
+}
+
+extension CountryReportViewController: CountryReportViewModelOutputProtocol {
+    func update(reportFields: [ReportFieldData]) {
+        self.reportFields = reportFields
     }
-    
 }
 
 // MARK: - UITableViewDataSource
 
-extension CountriesListViewController: UITableViewDataSource {
+extension CountryReportViewController: UITableViewDataSource {
     
     func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        self.reports.count
+        self.reportFields.count
     }
     
     func tableView(
@@ -125,11 +109,11 @@ extension CountriesListViewController: UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: Constants.countryCellId,
-            for: indexPath) as? CountryTableViewCell
+            withIdentifier: Constants.reportFieldCellId,
+            for: indexPath) as? ReportFieldTableViewCell
         else { return .init() }
         
-        cell.report = self.reports[indexPath.row]
+        cell.fieldData = self.reportFields[indexPath.row]
         
         return cell
     }
@@ -138,11 +122,10 @@ extension CountriesListViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension CountriesListViewController: UITableViewDelegate {
+extension CountryReportViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.viewModel.didTapOnCountry(indexPath.row)
     }
     
 }
