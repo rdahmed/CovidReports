@@ -96,7 +96,7 @@
 				D3E558BD28169BF100EFF796 /* Assets */,
 				D3E558DA2816A92800EFF796 /* Network */,
 				D3E559062816BC5000EFF796 /* Domain */,
-				D3E558BE28169F2F00EFF796 /* Main */,
+				D3E558BE28169F2F00EFF796 /* Presentation */,
 				D3E558EA2816ACAC00EFF796 /* Extensions */,
 				D3E558AE28169B9A00EFF796 /* Main.storyboard */,
 				D3E558B628169B9C00EFF796 /* Info.plist */,
@@ -122,13 +122,13 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		D3E558BE28169F2F00EFF796 /* Main */ = {
+		D3E558BE28169F2F00EFF796 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				D3E558BF28169F9600EFF796 /* MainCoordinator.swift */,
 				D3E558C128169FA600EFF796 /* MainFactory.swift */,
 			);
-			path = Main;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		D3E558DA2816A92800EFF796 /* Network */ = {
