@@ -7,37 +7,44 @@
 
 import Foundation
 
-struct LatestCovidReportDTO: Decodable {
-    let countries: [String: CountryCovidReportWrapperDTO]
-    
-    func mapToEntity() -> [CountryCovidReport] {
-        let countriesReportsDTO = self.countries.values.map { $0.all }
-        let countries = countriesReportsDTO.map { $0.mapToEntity() }
-        return countries
-    }
-}
-
-struct CountryCovidReportWrapperDTO: Decodable {
-    let all: CountryCovidReportDTO
-}
+typealias LatestCovidReportDTO = [String: CountryCovidReportDTO]
 
 struct CountryCovidReportDTO: Decodable {
     let confirmed: Int
     let recovered: Int
     let deaths: Int
-    let country: String
-    let population: Int
-    let continent: String
-    let abbreviation: String
-    let updated: String
+    let country: String?
+    let population: Int?
+    let continent: String?
+    let abbreviation: String?
+    let updated: String?
     
-    func mapToEntity() -> CountryCovidReport {
-        .init(
-            countryName: self.country,
-            population: self.population,
-            activeCases: self.confirmed,
-            deaths: self.deaths,
-            lastUpdateDate: Date() //dto.updated // FIXME: Use formatter
-        )
+    enum CodingKeys: String, CodingKey {
+        case all = "All"
+    }
+    
+    enum ReportKeys: String, CodingKey {
+        case confirmed
+        case recovered
+        case deaths
+        case country
+        case population
+        case continent
+        case abbreviation
+        case updated
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let report = try container.nestedContainer(keyedBy: ReportKeys.self, forKey: .all)
+                
+        self.confirmed = try report.decode(Int.self, forKey: .confirmed)
+        self.recovered = try report.decode(Int.self, forKey: .recovered)
+        self.deaths = try report.decode(Int.self, forKey: .deaths)
+        self.country = try report.decodeIfPresent(String.self, forKey: .country)
+        self.population = try report.decodeIfPresent(Int.self, forKey: .population)
+        self.continent = try report.decodeIfPresent(String.self, forKey: .continent)
+        self.abbreviation = try report.decodeIfPresent(String.self, forKey: .abbreviation)
+        self.updated = try report.decodeIfPresent(String.self, forKey: .updated)
     }
 }

@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol CountriesListOutputProtocol: AnyObject {
-    func update(countries: [String])
+protocol CountriesListViewModelOutputProtocol: AnyObject {
+    func update(reports: [CountryCovidReport])
     func update(errorMessage: String)
 }
 
-protocol CountriesListInputProtocol: AnyObject {
-    func viewWillAppear()
-    func didTapOnCountry()
+protocol CountriesListViewModelInputProtocol: AnyObject {
+    func fetchLatestCovidReports()
+    func didTapOnCountry(_ index: Int)
 }

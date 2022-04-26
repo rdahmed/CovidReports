@@ -17,10 +17,10 @@ class CountriesListViewController: UIViewController {
     
     // MARK: - Dependenceis
     
-    let viewModel: CountriesListInputProtocol
-    var countries = [String]() {
+    let viewModel: CountriesListViewModelInputProtocol
+    var reports: [CountryCovidReport] = [] {
         didSet {
-            tableView.reloadData()
+            self.tableView.reloadData()
         }
     }
     
@@ -30,9 +30,9 @@ class CountriesListViewController: UIViewController {
     
     // MARK: - Initializers
     
-    init(viewModel: CountriesListViewModel) {
+    init(viewModel: CountriesListViewModelInputProtocol) {
         self.viewModel = viewModel
-        super.init()
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -49,26 +49,28 @@ class CountriesListViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        setupLayout()
+        setupConstraints()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewModel.viewWillAppear()
+        viewModel.fetchLatestCovidReports()
     }
     
 }
 
 // MARK: - ViewModelOutput
 
-extension CountriesListViewController: CountriesListOutputProtocol {
+extension CountriesListViewController: CountriesListViewModelOutputProtocol {
     
-    func update(countries: [String]) {
-        self.countries = countries
+    func update(reports: [CountryCovidReport]) {
+        self.reports = reports
     }
     
     func update(errorMessage: String) {
-        // TODO: Present alert with this error message
+        print(errorMessage)
     }
     
 }
@@ -78,16 +80,13 @@ extension CountriesListViewController: CountriesListOutputProtocol {
 private extension CountriesListViewController {
     
     func setupViews() {
-        view.addSubview(tableView)
-        setupTableView()
-        setupConstraints()
-    }
-    
-    func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        
         tableView.register(CountryTableViewCell.self, forCellReuseIdentifier: Constants.countryCellId)
+    }
+    
+    func setupLayout() {
+        view.addSubview(tableView)
     }
     
     func setupConstraints() {
@@ -108,23 +107,21 @@ extension CountriesListViewController: UITableViewDataSource {
     
     func tableView(
         _ tableView: UITableView,
-        numberOfRowsInSection section: Int)
-    -> Int
-    {
-        countries.count
+        numberOfRowsInSection section: Int
+    ) -> Int {
+        reports.count
     }
     
     func tableView(
         _ tableView: UITableView,
-        cellForRowAt indexPath: IndexPath)
-    -> UITableViewCell
-    {
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: Constants.countryCellId,
             for: indexPath) as? CountryTableViewCell
-        else { return UITableViewCell() }
+        else { return .init() }
         
-        cell.setCountryName(countries[indexPath.row])
+        cell.report = reports[indexPath.row]
         
         return cell
     }
@@ -136,7 +133,7 @@ extension CountriesListViewController: UITableViewDataSource {
 extension CountriesListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didTapOnCountry()
+        viewModel.didTapOnCountry(indexPath.row)
     }
     
 }

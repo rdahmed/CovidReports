@@ -11,59 +11,57 @@ class CountriesListViewModel {
     
     // MARK: - Dependencies
     
-    var allReports = [CountryCovidReport]()
-    var countries = [String]() {
-        didSet {
-            view.update(countries: countries)
-        }
-    }
+    var countriesReports = [CountryCovidReport]()
+    var errorMessage: String?
     
     // MARK: - Properties
     
-    let view: CountriesListOutputProtocol
-    let router: CountriesListRouter
+    var view: CountriesListViewModelOutputProtocol?
+    
+    private let latestReportsService: LatestCovidReportServiceProtocol
+    private let router: CountriesListRouter
     
     // MARK: - Initializers
     
     init(
-        _ view: CountriesListOutputProtocol,
-        router: CountriesListRouter)
-    {
-        self.view = view
+        service: LatestCovidReportServiceProtocol = LatestCovidReportService.default,
+        router: CountriesListRouter
+    ) {
+        self.latestReportsService = service
         self.router = router
     }
     
     deinit {
-        print(">>>>>>> CountriesListViewModel.deinit")
-    }
-    
-    func getCountries() {
-        LatestCovidReportService.default.getLatestCovidCases { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let report):
-                self.allReports = report.countries
-                self.countries = report.countries.map { $0.name }
-                
-            case .failure(let error):
-                self.view.update(errorMessage: error.localizedDescription)
-            }
-        }
+        print(#function, #file)
     }
     
 }
 
 // MARK: - ViewModelInput
 
-extension CountriesListViewModel: CountriesListInputProtocol {
+extension CountriesListViewModel: CountriesListViewModelInputProtocol {
     
-    func viewWillAppear() {
-        getCountries()
+    func fetchLatestCovidReports() {
+        self.latestReportsService.getLatestCovidCases { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let reports):
+                self.countriesReports = reports
+                
+                let sortedReports = self.countriesReports.sorted { $0.countryName < $1.countryName }
+                self.view?.update(reports: sortedReports)
+                
+            case .failure(let error):
+                self.view?.update(errorMessage: error.localizedDescription)
+            }
+        }
     }
     
-    func didTapOnCountry() {
+    func didTapOnCountry(_ index: Int) {
+        print(#function, index)
         // TODO: Route to next screen
     }
     
 }
+

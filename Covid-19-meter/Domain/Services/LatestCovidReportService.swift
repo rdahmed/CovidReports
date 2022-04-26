@@ -18,8 +18,8 @@ class LatestCovidReportService: LatestCovidReportServiceProtocol {
         jsonTransport.get(LatestCovidReportDTO.self, route: .getLatestCovidCases) { result in
             switch result {
             case .success(let dto):
-                let entity = dto.mapToEntity()
-                completion(.success(entity))
+                let reports = dto.map { CountryCovidReport(countryName: $0.key, dto: $0.value) }
+                completion(.success(reports))
                 
             case .failure(let error):
                 completion(.failure(error))
