@@ -14,7 +14,7 @@ class ReportFieldTableViewCell: UITableViewCell {
     var fieldData: ReportFieldData? {
         didSet {
             guard let fieldData = fieldData else { return }
-            updateUI(fieldData)
+            self.updateUI(fieldData)
         }
     }
     
@@ -25,7 +25,7 @@ class ReportFieldTableViewCell: UITableViewCell {
 private extension ReportFieldTableViewCell {
     
     func updateUI(_ fieldData: ReportFieldData) {
-        let config = makeConfig(
+        let config = self.makeConfig(
             text: fieldData.name,
             secondaryText: fieldData.value
         )

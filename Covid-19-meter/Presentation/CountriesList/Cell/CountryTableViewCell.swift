@@ -14,7 +14,7 @@ class CountryTableViewCell: UITableViewCell {
     var report: CountryCovidReport? {
         didSet {
             guard let report = report else { return }
-            updateUI(report)
+            self.updateUI(report)
         }
     }
     
@@ -23,7 +23,7 @@ class CountryTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        accessoryType = .disclosureIndicator
+        self.accessoryType = .disclosureIndicator
     }
     
     required init?(coder: NSCoder) {
@@ -37,7 +37,7 @@ class CountryTableViewCell: UITableViewCell {
 private extension CountryTableViewCell {
     
     func updateUI(_ report: CountryCovidReport) {
-        let config = makeConfig(report.countryName)
+        let config = self.makeConfig(report.countryName)
         contentConfiguration = config
     }
 

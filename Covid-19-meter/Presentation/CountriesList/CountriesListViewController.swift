@@ -68,7 +68,10 @@ extension CountriesListViewController: CountriesListViewModelOutputProtocol {
     }
     
     func update(errorMessage: String) {
-        print(errorMessage)
+        UIAlertController
+            .alert(title: "Failed to load data!", message: "Something went wrong. Please try again later")
+            .addOk()
+            .present(on: self)
     }
     
 }

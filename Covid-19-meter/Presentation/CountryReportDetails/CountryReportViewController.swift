@@ -73,16 +73,16 @@ private extension CountryReportViewController {
     }
     
     func setupLayout() {
-        view.addSubview(self.tableView)
+        self.view.addSubview(self.tableView)
     }
     
     func setupConstraints() {
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            self.tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            self.tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         ])
     }
     

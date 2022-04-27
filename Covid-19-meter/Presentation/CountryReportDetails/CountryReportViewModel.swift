@@ -16,7 +16,7 @@ class CountryReportViewModel: CountryReportViewModelInputProtocol {
     private let countryReport: CountryCovidReport
     private var reportFields: [ReportFieldData] = [] {
         didSet {
-            view?.update(reportFields: reportFields)
+            self.view?.update(reportFields: reportFields)
         }
     }
     
