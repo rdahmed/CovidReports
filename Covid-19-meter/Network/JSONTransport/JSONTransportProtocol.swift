@@ -21,3 +21,24 @@ protocol JSONTransportProtocol {
     where T: Decodable
     
 }
+
+extension JSONTransportProtocol {
+    
+    func get<T>(
+        _ type: T.Type,
+        route: Route,
+        queryItems: QueryItems = [:],
+        headers: Headers = [:],
+        completion: @escaping CompletionHandler<T>)
+    where T: Decodable {
+        
+        self.get(
+            type,
+            route: route,
+            queryItems: queryItems,
+            headers: headers,
+            completion: completion
+        )
+    }
+    
+}
