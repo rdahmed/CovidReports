@@ -39,12 +39,19 @@ class CountryReportViewModel: CountryReportViewModelInputProtocol {
 private extension CountryReportViewModel {
     
     func makeReportFieldsData(_ report: CountryCovidReport) -> [ReportFieldData] {
-        [
+        var lastUpdateDate: String
+        if let date = report.lastUpdateDate {
+            lastUpdateDate = Formatters.uiDisplay.string(from: date)
+        } else {
+            lastUpdateDate = "-"
+        }
+        
+        return [
             .init(name: "Number of active cases", value: "\(report.activeCases)"),
             .init(name: "Number of deaths", value: "\(report.deaths)"),
             .init(name: "Active cases for 100K hab", value: report.activeCasesFor100kHab.map { "\($0)" } ?? "-"),
             .init(name: "Deaths for 100K hab", value: report.deathsFor100kHab.map { "\($0)" } ?? "-"),
-            .init(name: "Date of last update", value: "-") // report.lastUpdateDate // FIXME: Date Formatter
+            .init(name: "Date of last update", value: lastUpdateDate)
         ]
     }
     

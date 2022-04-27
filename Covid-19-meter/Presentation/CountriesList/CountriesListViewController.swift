@@ -81,12 +81,15 @@ private extension CountriesListViewController {
         self.tableView.delegate = self
         self.tableView.register(CountryTableViewCell.self, forCellReuseIdentifier: Constants.countryCellId)
         
-        self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        self.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
     
     func setupLayout() {
         view.addSubview(self.tableView)
         self.tableView.refreshControl = self.refreshControl
+        
+        let sortBarButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(didTapSort))
+        navigationItem.rightBarButtonItem = sortBarButton
     }
     
     func setupConstraints() {
@@ -100,11 +103,34 @@ private extension CountriesListViewController {
     }
     
     @objc
-    private func refresh(_ refreshControl: UIRefreshControl) {
+    func refresh(_ refreshControl: UIRefreshControl) {
         self.viewModel.fetchLatestCovidReports { [weak self] in
             self?.refreshControl.endRefreshing()
         }
-        
+    }
+    
+    @objc
+    func didTapSort() {
+        UIAlertController
+            .sheet(title: "Sort by")
+            .addCancel()
+            .addDefault(title: "number of active cases", handler: { [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.didTapSort(.activeCases)
+            })
+            .addDefault(title: "number of deaths", handler: { [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.didTapSort(.deaths)
+            })
+            .addDefault(title: "active cases for 100K hab", handler: { [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.didTapSort(.activeCasesFor100kHab)
+            })
+            .addDefault(title: "deaths for 100K hab", handler: { [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.didTapSort(.deathsFor100kHab)
+            })
+            .present(on: self)
     }
     
 }

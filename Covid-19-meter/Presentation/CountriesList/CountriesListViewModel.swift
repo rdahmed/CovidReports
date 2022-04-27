@@ -7,6 +7,14 @@
 
 import Foundation
 
+enum SortOption {
+    case countryName
+    case activeCases
+    case deaths
+    case activeCasesFor100kHab
+    case deathsFor100kHab
+}
+
 class CountriesListViewModel {
     
     // MARK: - Dependencies
@@ -58,6 +66,27 @@ extension CountriesListViewModel: CountriesListViewModelInputProtocol {
             }
             
             completion?()
+        }
+    }
+    
+    func didTapSort(_ option: SortOption) {
+        self.countriesReports = self.countriesReports.sorted {
+            switch option {
+            case .countryName:
+                return $0.countryName < $1.countryName
+                
+            case .activeCases:
+                return $0.activeCases > $1.activeCases
+                
+            case .deaths:
+                return $0.deaths > $1.deaths
+                
+            case .activeCasesFor100kHab:
+                return ($0.activeCasesFor100kHab ?? 0) > ($1.activeCasesFor100kHab ?? 0)
+                
+            case .deathsFor100kHab:
+                return ($0.deathsFor100kHab ?? 0) > ($1.deathsFor100kHab ?? 0)
+            }
         }
     }
     

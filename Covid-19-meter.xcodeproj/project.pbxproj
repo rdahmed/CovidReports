@@ -17,6 +17,8 @@
 		D3DB945228189E2300414439 /* CountryReportContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB945128189E2300414439 /* CountryReportContracts.swift */; };
 		D3DB94542818A8DF00414439 /* ReportFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB94532818A8DF00414439 /* ReportFieldTableViewCell.swift */; };
 		D3DB94582818B4E100414439 /* DefaultNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB94572818B4E100414439 /* DefaultNavigationController.swift */; };
+		D3DB945B2819300200414439 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB945A2819300200414439 /* Formatters.swift */; };
+		D3DB945D2819380A00414439 /* UIAlertController+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB945C2819380A00414439 /* UIAlertController+Builder.swift */; };
 		D3E558A928169B9A00EFF796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558A828169B9A00EFF796 /* AppDelegate.swift */; };
 		D3E558AB28169B9A00EFF796 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558AA28169B9A00EFF796 /* SceneDelegate.swift */; };
 		D3E558B228169B9C00EFF796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E558B128169B9C00EFF796 /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		D3DB945128189E2300414439 /* CountryReportContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryReportContracts.swift; sourceTree = "<group>"; };
 		D3DB94532818A8DF00414439 /* ReportFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFieldTableViewCell.swift; sourceTree = "<group>"; };
 		D3DB94572818B4E100414439 /* DefaultNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNavigationController.swift; sourceTree = "<group>"; };
+		D3DB945A2819300200414439 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		D3DB945C2819380A00414439 /* UIAlertController+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Builder.swift"; sourceTree = "<group>"; };
 		D3E558A528169B9A00EFF796 /* Covid-19-meter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid-19-meter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E558A828169B9A00EFF796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3E558AA28169B9A00EFF796 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +148,15 @@
 			path = NavigationController;
 			sourceTree = "<group>";
 		};
+		D3DB945928192FC800414439 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D3E558EA2816ACAC00EFF796 /* Extensions */,
+				D3DB945A2819300200414439 /* Formatters.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		D3E5589C28169B9A00EFF796 = {
 			isa = PBXGroup;
 			children = (
@@ -168,7 +181,7 @@
 				D3E558DA2816A92800EFF796 /* Network */,
 				D3E559062816BC5000EFF796 /* Domain */,
 				D3E558BE28169F2F00EFF796 /* Presentation */,
-				D3E558EA2816ACAC00EFF796 /* Extensions */,
+				D3DB945928192FC800414439 /* Helpers */,
 				D3E558B628169B9C00EFF796 /* Info.plist */,
 			);
 			path = "Covid-19-meter";
@@ -247,6 +260,7 @@
 			children = (
 				D3E558EB2816ACD000EFF796 /* String+Utilities.swift */,
 				D3E558F92816AFB800EFF796 /* Optional+Unwrapped.swift */,
+				D3DB945C2819380A00414439 /* UIAlertController+Builder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -375,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3DB945B2819300200414439 /* Formatters.swift in Sources */,
 				D3E559052816B7EE00EFF796 /* CountryCovidReport.swift in Sources */,
 				D3DB94582818B4E100414439 /* DefaultNavigationController.swift in Sources */,
 				D3DB945228189E2300414439 /* CountryReportContracts.swift in Sources */,
@@ -386,6 +401,7 @@
 				D3E559092816C3C100EFF796 /* LatestCovidReportServiceProtocol.swift in Sources */,
 				D3DB94542818A8DF00414439 /* ReportFieldTableViewCell.swift in Sources */,
 				D3E558A928169B9A00EFF796 /* AppDelegate.swift in Sources */,
+				D3DB945D2819380A00414439 /* UIAlertController+Builder.swift in Sources */,
 				D3E558FA2816AFB800EFF796 /* Optional+Unwrapped.swift in Sources */,
 				D3E558F82816AECA00EFF796 /* Route+Path.swift in Sources */,
 				D3E558E32816AAEA00EFF796 /* NetworkServiceError.swift in Sources */,
