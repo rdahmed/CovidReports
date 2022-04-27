@@ -47,4 +47,24 @@ struct CountryCovidReportDTO: Decodable {
         self.abbreviation = try report.decodeIfPresent(String.self, forKey: .abbreviation)
         self.updated = try report.decodeIfPresent(String.self, forKey: .updated)
     }
+    
+    init(
+        confirmed: Int,
+        recovered: Int,
+        deaths: Int,
+        country: String?,
+        population: Int?,
+        continent: String?,
+        abbreviation: String?,
+        updated: String?
+    ) {
+        self.confirmed = confirmed
+        self.recovered = recovered
+        self.deaths = deaths
+        self.country = country
+        self.population = population
+        self.continent = continent
+        self.abbreviation = abbreviation
+        self.updated = updated
+    }
 }

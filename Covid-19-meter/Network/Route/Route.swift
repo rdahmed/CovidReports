@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum Route {
+enum Route: String {
     case getLatestCovidCases
 }

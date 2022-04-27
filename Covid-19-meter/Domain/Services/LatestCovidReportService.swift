@@ -9,10 +9,12 @@ import Foundation
 
 class LatestCovidReportService: LatestCovidReportServiceProtocol {
     
-    private init() {}
-    static let `default` = LatestCovidReportService()
+    private let jsonTransport: JSONTransportProtocol
+    init(_ jsonTransport: JSONTransportProtocol = JSONTransport()) {
+        self.jsonTransport = jsonTransport
+    }
     
-    private let jsonTransport = JSONTransport()
+    static let `default` = LatestCovidReportService()
     
     func getLatestCovidCases(completion: @escaping CompletionHandler<[CountryCovidReport]>) {
         jsonTransport.get(LatestCovidReportDTO.self, route: .getLatestCovidCases) { result in

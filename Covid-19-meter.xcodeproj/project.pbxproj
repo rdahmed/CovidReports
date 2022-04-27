@@ -21,6 +21,14 @@
 		D3DB945D2819380A00414439 /* UIAlertController+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB945C2819380A00414439 /* UIAlertController+Builder.swift */; };
 		D3DB945F28196A0300414439 /* ReportFieldDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB945E28196A0300414439 /* ReportFieldDataModel.swift */; };
 		D3DB946128196A4100414439 /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB946028196A4000414439 /* SortOption.swift */; };
+		D3DB94782819897900414439 /* CountriesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB94662819861500414439 /* CountriesListViewModelTests.swift */; };
+		D3DB947B281990BA00414439 /* CountryCovidReport+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB947A281990B900414439 /* CountryCovidReport+Mock.swift */; };
+		D3DB947D281990E000414439 /* CountryCovidReportDTO+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB947C281990E000414439 /* CountryCovidReportDTO+Mock.swift */; };
+		D3DB9481281991CD00414439 /* CountriesListViewModelOutputProtocol+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB9480281991CD00414439 /* CountriesListViewModelOutputProtocol+Mock.swift */; };
+		D3DB9483281991EA00414439 /* CountriesListRouterProtocol+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB9482281991EA00414439 /* CountriesListRouterProtocol+Mock.swift */; };
+		D3DB9485281991F200414439 /* LatestCovidReportServiceProtocol+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB9484281991F200414439 /* LatestCovidReportServiceProtocol+Mock.swift */; };
+		D3DB94872819A02700414439 /* LatestCovidReportsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB94862819A02700414439 /* LatestCovidReportsServiceTests.swift */; };
+		D3DB948D2819A5C700414439 /* JSONTransport+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DB948C2819A5C700414439 /* JSONTransport+Mock.swift */; };
 		D3E558A928169B9A00EFF796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558A828169B9A00EFF796 /* AppDelegate.swift */; };
 		D3E558AB28169B9A00EFF796 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E558AA28169B9A00EFF796 /* SceneDelegate.swift */; };
 		D3E558B228169B9C00EFF796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E558B128169B9C00EFF796 /* Assets.xcassets */; };
@@ -45,6 +53,16 @@
 		D3E5590E2816C53600EFF796 /* LatestCovidReportDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5590D2816C53600EFF796 /* LatestCovidReportDTO.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D3DB94722819896D00414439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3E5589D28169B9A00EFF796 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3E558A428169B9A00EFF796;
+			remoteInfo = "Covid-19-meter";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D3DB943E2818294A00414439 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
 		D3DB94402818295C00414439 /* CountriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
@@ -60,6 +78,15 @@
 		D3DB945C2819380A00414439 /* UIAlertController+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Builder.swift"; sourceTree = "<group>"; };
 		D3DB945E28196A0300414439 /* ReportFieldDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFieldDataModel.swift; sourceTree = "<group>"; };
 		D3DB946028196A4000414439 /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
+		D3DB94662819861500414439 /* CountriesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewModelTests.swift; sourceTree = "<group>"; };
+		D3DB946E2819896D00414439 /* Covid-19-meterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Covid-19-meterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3DB947A281990B900414439 /* CountryCovidReport+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryCovidReport+Mock.swift"; sourceTree = "<group>"; };
+		D3DB947C281990E000414439 /* CountryCovidReportDTO+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryCovidReportDTO+Mock.swift"; sourceTree = "<group>"; };
+		D3DB9480281991CD00414439 /* CountriesListViewModelOutputProtocol+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountriesListViewModelOutputProtocol+Mock.swift"; sourceTree = "<group>"; };
+		D3DB9482281991EA00414439 /* CountriesListRouterProtocol+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountriesListRouterProtocol+Mock.swift"; sourceTree = "<group>"; };
+		D3DB9484281991F200414439 /* LatestCovidReportServiceProtocol+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LatestCovidReportServiceProtocol+Mock.swift"; sourceTree = "<group>"; };
+		D3DB94862819A02700414439 /* LatestCovidReportsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCovidReportsServiceTests.swift; sourceTree = "<group>"; };
+		D3DB948C2819A5C700414439 /* JSONTransport+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONTransport+Mock.swift"; sourceTree = "<group>"; };
 		D3E558A528169B9A00EFF796 /* Covid-19-meter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid-19-meter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3E558A828169B9A00EFF796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3E558AA28169B9A00EFF796 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +114,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D3DB946B2819896D00414439 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3E558A228169B9A00EFF796 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -163,10 +197,89 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		D3DB9465281985EA00414439 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		D3DB946F2819896D00414439 /* Covid-19-meterTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3DB9479281990AB00414439 /* Mocks */,
+				D3DB94902819AB3900414439 /* Tests */,
+			);
+			path = "Covid-19-meterTests";
+			sourceTree = "<group>";
+		};
+		D3DB9479281990AB00414439 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D3DB947E281991B100414439 /* Entities */,
+				D3DB948B2819A5B500414439 /* Network */,
+				D3DB947F281991B500414439 /* Classes */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		D3DB947E281991B100414439 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D3DB947A281990B900414439 /* CountryCovidReport+Mock.swift */,
+				D3DB947C281990E000414439 /* CountryCovidReportDTO+Mock.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		D3DB947F281991B500414439 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D3DB948E2819A5D900414439 /* CountriesList */,
+				D3DB948F2819A5E400414439 /* CountryReportDetails */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D3DB948B2819A5B500414439 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D3DB948C2819A5C700414439 /* JSONTransport+Mock.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D3DB948E2819A5D900414439 /* CountriesList */ = {
+			isa = PBXGroup;
+			children = (
+				D3DB9480281991CD00414439 /* CountriesListViewModelOutputProtocol+Mock.swift */,
+				D3DB9482281991EA00414439 /* CountriesListRouterProtocol+Mock.swift */,
+				D3DB9484281991F200414439 /* LatestCovidReportServiceProtocol+Mock.swift */,
+			);
+			path = CountriesList;
+			sourceTree = "<group>";
+		};
+		D3DB948F2819A5E400414439 /* CountryReportDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CountryReportDetails;
+			sourceTree = "<group>";
+		};
+		D3DB94902819AB3900414439 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D3DB94662819861500414439 /* CountriesListViewModelTests.swift */,
+				D3DB94862819A02700414439 /* LatestCovidReportsServiceTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		D3E5589C28169B9A00EFF796 = {
 			isa = PBXGroup;
 			children = (
 				D3E558A728169B9A00EFF796 /* Covid-19-meter */,
+				D3DB946F2819896D00414439 /* Covid-19-meterTests */,
 				D3E558A628169B9A00EFF796 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -175,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				D3E558A528169B9A00EFF796 /* Covid-19-meter.app */,
+				D3DB946E2819896D00414439 /* Covid-19-meterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,6 +302,7 @@
 				D3E559062816BC5000EFF796 /* Domain */,
 				D3E558BE28169F2F00EFF796 /* Presentation */,
 				D3DB945928192FC800414439 /* Helpers */,
+				D3DB9465281985EA00414439 /* Testing */,
 				D3E558B628169B9C00EFF796 /* Info.plist */,
 			);
 			path = "Covid-19-meter";
@@ -328,6 +443,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D3DB946D2819896D00414439 /* Covid-19-meterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3DB94742819896D00414439 /* Build configuration list for PBXNativeTarget "Covid-19-meterTests" */;
+			buildPhases = (
+				D3DB946A2819896D00414439 /* Sources */,
+				D3DB946B2819896D00414439 /* Frameworks */,
+				D3DB946C2819896D00414439 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3DB94732819896D00414439 /* PBXTargetDependency */,
+			);
+			name = "Covid-19-meterTests";
+			productName = "Covid-19-meterTests";
+			productReference = D3DB946E2819896D00414439 /* Covid-19-meterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D3E558A428169B9A00EFF796 /* Covid-19-meter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3E558B928169B9C00EFF796 /* Build configuration list for PBXNativeTarget "Covid-19-meter" */;
@@ -355,6 +488,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					D3DB946D2819896D00414439 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = D3E558A428169B9A00EFF796;
+					};
 					D3E558A428169B9A00EFF796 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -374,11 +511,19 @@
 			projectRoot = "";
 			targets = (
 				D3E558A428169B9A00EFF796 /* Covid-19-meter */,
+				D3DB946D2819896D00414439 /* Covid-19-meterTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D3DB946C2819896D00414439 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3E558A328169B9A00EFF796 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,6 +536,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D3DB946A2819896D00414439 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3DB9485281991F200414439 /* LatestCovidReportServiceProtocol+Mock.swift in Sources */,
+				D3DB947D281990E000414439 /* CountryCovidReportDTO+Mock.swift in Sources */,
+				D3DB9483281991EA00414439 /* CountriesListRouterProtocol+Mock.swift in Sources */,
+				D3DB948D2819A5C700414439 /* JSONTransport+Mock.swift in Sources */,
+				D3DB947B281990BA00414439 /* CountryCovidReport+Mock.swift in Sources */,
+				D3DB94872819A02700414439 /* LatestCovidReportsServiceTests.swift in Sources */,
+				D3DB9481281991CD00414439 /* CountriesListViewModelOutputProtocol+Mock.swift in Sources */,
+				D3DB94782819897900414439 /* CountriesListViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3E558A128169B9A00EFF796 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -434,6 +594,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D3DB94732819896D00414439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3E558A428169B9A00EFF796 /* Covid-19-meter */;
+			targetProxy = D3DB94722819896D00414439 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		D3E558B328169B9C00EFF796 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -446,6 +614,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D3DB94752819896D00414439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HRX3B37H9L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.radwa.Covid-19-meterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Covid-19-meter.app/Covid-19-meter";
+			};
+			name = Debug;
+		};
+		D3DB94762819896D00414439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HRX3B37H9L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.radwa.Covid-19-meterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Covid-19-meter.app/Covid-19-meter";
+			};
+			name = Release;
+		};
 		D3E558B728169B9C00EFF796 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -621,6 +825,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D3DB94742819896D00414439 /* Build configuration list for PBXNativeTarget "Covid-19-meterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3DB94752819896D00414439 /* Debug */,
+				D3DB94762819896D00414439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D3E558A028169B9A00EFF796 /* Build configuration list for PBXProject "Covid-19-meter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

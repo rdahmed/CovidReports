@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CountriesListViewModel {
+final class CountriesListViewModel {
     
     // MARK: - Dependencies
     
@@ -24,18 +24,18 @@ class CountriesListViewModel {
         }
     }
     
-    private var displayReports: [CountryCovidReport] {
+    var displayReports: [CountryCovidReport] {
         return self.rawReports
             .filter(self.filterCriteria)
             .sorted(by: self.reportsSortCriteria)
     }
     
-    private var searchText: String = .empty {
+    var searchText: String = .empty {
         didSet {
             self.view?.update(reports: self.displayReports)
         }
     }
-    private var sortOption: SortOption = .countryName {
+    var sortOption: SortOption = .countryName {
         didSet {
             self.view?.update(reports: self.displayReports)
         }
@@ -102,10 +102,10 @@ extension CountriesListViewModel: CountriesListViewModelInputProtocol {
             return lhs.deaths > rhs.deaths
             
         case .activeCasesFor100kHab:
-            return (lhs.activeCasesFor100kHab ?? 0) > (rhs.activeCasesFor100kHab ?? 0)
+            return (lhs.activeCasesFor100kHab ?? .zero) > (rhs.activeCasesFor100kHab ?? .zero)
             
         case .deathsFor100kHab:
-            return (lhs.deathsFor100kHab ?? 0) > (rhs.deathsFor100kHab ?? 0)
+            return (lhs.deathsFor100kHab ?? .zero) > (rhs.deathsFor100kHab ?? .zero)
         }
     }
     
