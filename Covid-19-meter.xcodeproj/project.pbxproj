@@ -197,13 +197,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		D3DB9465281985EA00414439 /* Testing */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Testing;
-			sourceTree = "<group>";
-		};
 		D3DB946F2819896D00414439 /* Covid-19-meterTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,7 +295,6 @@
 				D3E559062816BC5000EFF796 /* Domain */,
 				D3E558BE28169F2F00EFF796 /* Presentation */,
 				D3DB945928192FC800414439 /* Helpers */,
-				D3DB9465281985EA00414439 /* Testing */,
 				D3E558B628169B9C00EFF796 /* Info.plist */,
 			);
 			path = "Covid-19-meter";
