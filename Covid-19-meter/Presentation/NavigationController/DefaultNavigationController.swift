@@ -12,15 +12,17 @@ class DefaultNavigationController: UINavigationController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        setupAppearance()
+        self.setupAppearance()
     }
     
     private func setupAppearance() {
+        self.view.backgroundColor = .systemBackground
+        
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .white
-        navigationBar.standardAppearance = appearance
-        navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
+        self.navigationBar.standardAppearance = appearance
+        self.navigationBar.scrollEdgeAppearance = self.navigationBar.standardAppearance
     }
     
 }

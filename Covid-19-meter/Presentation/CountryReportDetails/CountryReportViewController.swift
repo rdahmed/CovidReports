@@ -17,8 +17,8 @@ class CountryReportViewController: UIViewController {
     
     // MARK: - Dependencies
     
-    let viewModel: CountryReportViewModelInputProtocol
-    var reportFields: [ReportFieldData] = [] {
+    private let viewModel: CountryReportViewModelInputProtocol
+    private var reportFields: [ReportFieldData] = [] {
         didSet {
             self.tableView.reloadData()
         }
@@ -26,7 +26,7 @@ class CountryReportViewController: UIViewController {
     
     // MARK: - Properties
     
-    let tableView = UITableView(frame: .zero, style: .plain)
+    private let tableView = UITableView(frame: .zero, style: .plain)
     
     // MARK: - Initializers
     
@@ -62,7 +62,8 @@ class CountryReportViewController: UIViewController {
 private extension CountryReportViewController {
     
     func setupViews() {
-        self.tableView.isScrollEnabled = false
+        self.navigationItem.largeTitleDisplayMode = .never
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(
@@ -86,6 +87,8 @@ private extension CountryReportViewController {
     }
     
 }
+
+// MARK: - ViewModelOutput
 
 extension CountryReportViewController: CountryReportViewModelOutputProtocol {
     func update(reportFields: [ReportFieldData]) {

@@ -7,11 +7,6 @@
 
 import UIKit
 
-struct ReportFieldData {
-    let name: String
-    let value: String
-}
-
 class ReportFieldTableViewCell: UITableViewCell {
     
     // MARK: - Dependancies

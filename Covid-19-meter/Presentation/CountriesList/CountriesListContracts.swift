@@ -14,7 +14,8 @@ protocol CountriesListViewModelOutputProtocol: AnyObject {
 
 protocol CountriesListViewModelInputProtocol: AnyObject {
     func fetchLatestCovidReports(completion: (() -> Void)?)
-    func didTapSort(_ option: SortOption)
+    func searchCountries(_ searchText: String)
+    func sortCountries(_ option: SortOption)
     func didTapOnCountry(_ index: Int)
 }
 
