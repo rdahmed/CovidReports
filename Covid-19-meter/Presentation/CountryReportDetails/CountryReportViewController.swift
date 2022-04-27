@@ -17,8 +17,8 @@ class CountryReportViewController: UIViewController {
     
     // MARK: - Dependencies
     
-    let viewModel: CountryReportViewModelInputProtocol
-    var reportFields: [ReportFieldData] = [] {
+    private let viewModel: CountryReportViewModelInputProtocol
+    private var reportFields: [ReportFieldData] = [] {
         didSet {
             self.tableView.reloadData()
         }
@@ -26,7 +26,7 @@ class CountryReportViewController: UIViewController {
     
     // MARK: - Properties
     
-    let tableView = UITableView(frame: .zero, style: .plain)
+    private let tableView = UITableView(frame: .zero, style: .plain)
     
     // MARK: - Initializers
     
@@ -62,7 +62,8 @@ class CountryReportViewController: UIViewController {
 private extension CountryReportViewController {
     
     func setupViews() {
-        self.tableView.isScrollEnabled = false
+        self.navigationItem.largeTitleDisplayMode = .never
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(
@@ -72,20 +73,22 @@ private extension CountryReportViewController {
     }
     
     func setupLayout() {
-        view.addSubview(self.tableView)
+        self.view.addSubview(self.tableView)
     }
     
     func setupConstraints() {
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            self.tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            self.tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         ])
     }
     
 }
+
+// MARK: - ViewModelOutput
 
 extension CountryReportViewController: CountryReportViewModelOutputProtocol {
     func update(reportFields: [ReportFieldData]) {

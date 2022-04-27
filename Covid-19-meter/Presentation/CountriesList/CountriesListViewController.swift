@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CountriesListViewController: UIViewController {
+final class CountriesListViewController: UIViewController {
     
     // MARK: - Constants
     
@@ -17,8 +17,8 @@ class CountriesListViewController: UIViewController {
     
     // MARK: - Dependenceis
     
-    let viewModel: CountriesListViewModelInputProtocol
-    var reports: [CountryCovidReport] = [] {
+    private let viewModel: CountriesListViewModelInputProtocol
+    private var reports: [CountryCovidReport] = [] {
         didSet {
             self.tableView.reloadData()
         }
@@ -26,8 +26,9 @@ class CountriesListViewController: UIViewController {
     
     // MARK: - Properties
     
-    let tableView = UITableView(frame: .zero, style: .plain)
-    let refreshControl = UIRefreshControl()
+    private let searchController = UISearchController(searchResultsController: nil)
+    private let tableView = UITableView(frame: .zero, style: .plain)
+    private let refreshControl = UIRefreshControl()
     
     // MARK: - Initializers
     
@@ -67,16 +68,22 @@ extension CountriesListViewController: CountriesListViewModelOutputProtocol {
     }
     
     func update(errorMessage: String) {
-        print(errorMessage)
+        UIAlertController
+            .alert(title: "Failed to load data!", message: "Something went wrong. Please try again later")
+            .addOk()
+            .present(on: self)
     }
     
 }
 
-// MARK: - UISetup
+// MARK: - UI Setup
 
 private extension CountriesListViewController {
     
     func setupViews() {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.setupSearchController()
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(CountryTableViewCell.self, forCellReuseIdentifier: Constants.countryCellId)
@@ -84,53 +91,69 @@ private extension CountriesListViewController {
         self.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
     
+    func setupSearchController() {
+        self.searchController.searchResultsUpdater = self
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.searchBar.placeholder = "Search..."
+        self.navigationItem.searchController = self.searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = true
+        self.definesPresentationContext = true
+    }
+    
     func setupLayout() {
-        view.addSubview(self.tableView)
+        self.view.addSubview(self.tableView)
         self.tableView.refreshControl = self.refreshControl
         
         let sortBarButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(didTapSort))
-        navigationItem.rightBarButtonItem = sortBarButton
+        self.navigationItem.rightBarButtonItem = sortBarButton
     }
     
     func setupConstraints() {
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            self.tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            self.tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         ])
     }
+    
+}
+
+// MARK: - Private Actions
+
+private extension CountriesListViewController {
     
     @objc
     func refresh(_ refreshControl: UIRefreshControl) {
         self.viewModel.fetchLatestCovidReports { [weak self] in
             self?.refreshControl.endRefreshing()
+            self?.resetSearchAndSortState()
         }
+    }
+    
+    func resetSearchAndSortState() {
+        self.searchController.searchBar.resignFirstResponder()
+        self.searchController.searchBar.text = .empty
+        self.searchController.dismiss(animated: true)
+        
+        self.viewModel.searchCountries(.empty)
+        self.viewModel.sortCountries(.countryName)
     }
     
     @objc
     func didTapSort() {
-        UIAlertController
+        let alert = UIAlertController
             .sheet(title: "Sort by")
             .addCancel()
-            .addDefault(title: "number of active cases", handler: { [weak self] _ in
-                guard let self = self else { return }
-                self.viewModel.didTapSort(.activeCases)
-            })
-            .addDefault(title: "number of deaths", handler: { [weak self] _ in
-                guard let self = self else { return }
-                self.viewModel.didTapSort(.deaths)
-            })
-            .addDefault(title: "active cases for 100K hab", handler: { [weak self] _ in
-                guard let self = self else { return }
-                self.viewModel.didTapSort(.activeCasesFor100kHab)
-            })
-            .addDefault(title: "deaths for 100K hab", handler: { [weak self] _ in
-                guard let self = self else { return }
-                self.viewModel.didTapSort(.deathsFor100kHab)
-            })
-            .present(on: self)
+        
+        SortOption.allCases.forEach { option in
+            alert.addDefault(title: option.localized) { [weak self] _ in
+                self?.viewModel.sortCountries(option)
+            }
+        }
+        
+        alert.present(on: self)
     }
     
 }
@@ -169,6 +192,17 @@ extension CountriesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         self.viewModel.didTapOnCountry(indexPath.row)
+    }
+    
+}
+
+// MARK: - UISearchResultsUpdating
+
+extension CountriesListViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchText = searchController.searchBar.text ?? .empty
+        self.viewModel.searchCountries(searchText)
     }
     
 }

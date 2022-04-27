@@ -11,6 +11,7 @@ import UIKit
 extension UIAlertController {
     
     // MARK: - Alert Types
+    
     static func alert(title: String = "", message: String = "") -> UIAlertController {
         return UIAlertController(title: title, message: message, preferredStyle: .alert).tint()
     }
@@ -28,28 +29,35 @@ extension UIAlertController {
     }
     
     // MARK: - Tint
+    
     func tint(_ color: UIColor = .blue) -> UIAlertController {
         view.tintColor = color
         return self
     }
     
     // MARK: - Basic Actions
+    
+    @discardableResult
     func addDefault(title: String?, handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
         addAction(UIAlertAction(title: title, style: .default, handler: handler))
         return self
     }
     
+    @discardableResult
     func addDestructive(title: String?, handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
         addAction(UIAlertAction(title: title, style: .destructive, handler: handler))
         return self
     }
     
+    @discardableResult
     func addCancel(title: String? = "Cancel", handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
         addAction(UIAlertAction(title: title, style: .cancel, handler: handler))
         return self
     }
     
     // MARK: - Other Actions
+    
+    @discardableResult
     func addOk(handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
         addDefault(title: "Ok", handler: handler)
     }

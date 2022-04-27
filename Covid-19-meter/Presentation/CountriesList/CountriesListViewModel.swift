@@ -7,31 +7,39 @@
 
 import Foundation
 
-enum SortOption {
-    case countryName
-    case activeCases
-    case deaths
-    case activeCasesFor100kHab
-    case deathsFor100kHab
-}
-
 class CountriesListViewModel {
     
     // MARK: - Dependencies
     
-    var countriesReports = [CountryCovidReport]() {
-        didSet {
-            self.view?.update(reports: countriesReports)
-        }
-    }
-    var errorMessage: String?
+    var view: CountriesListViewModelOutputProtocol?
+    
+    private let service: LatestCovidReportServiceProtocol
+    private let router: CountriesListRouterProtocol
     
     // MARK: - Properties
     
-    var view: CountriesListViewModelOutputProtocol?
+    private var rawReports: [CountryCovidReport] = [] {
+        didSet {
+            self.view?.update(reports: self.displayReports)
+        }
+    }
     
-    private let latestReportsService: LatestCovidReportServiceProtocol
-    private let router: CountriesListRouterProtocol
+    private var displayReports: [CountryCovidReport] {
+        return self.rawReports
+            .filter(self.filterCriteria)
+            .sorted(by: self.reportsSortCriteria)
+    }
+    
+    private var searchText: String = .empty {
+        didSet {
+            self.view?.update(reports: self.displayReports)
+        }
+    }
+    private var sortOption: SortOption = .countryName {
+        didSet {
+            self.view?.update(reports: self.displayReports)
+        }
+    }
     
     // MARK: - Initializers
     
@@ -39,7 +47,7 @@ class CountriesListViewModel {
         service: LatestCovidReportServiceProtocol = LatestCovidReportService.default,
         router: CountriesListRouterProtocol
     ) {
-        self.latestReportsService = service
+        self.service = service
         self.router = router
     }
     
@@ -54,12 +62,12 @@ class CountriesListViewModel {
 extension CountriesListViewModel: CountriesListViewModelInputProtocol {
     
     func fetchLatestCovidReports(completion: (() -> Void)?) {
-        self.latestReportsService.getLatestCovidCases { [weak self] result in
+        self.service.getLatestCovidCases { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let reports):
-                self.countriesReports = reports.sorted { $0.countryName < $1.countryName }
+                self.rawReports = reports
                 
             case .failure(let error):
                 self.view?.update(errorMessage: error.localizedDescription)
@@ -69,31 +77,41 @@ extension CountriesListViewModel: CountriesListViewModelInputProtocol {
         }
     }
     
-    func didTapSort(_ option: SortOption) {
-        self.countriesReports = self.countriesReports.sorted {
-            switch option {
-            case .countryName:
-                return $0.countryName < $1.countryName
-                
-            case .activeCases:
-                return $0.activeCases > $1.activeCases
-                
-            case .deaths:
-                return $0.deaths > $1.deaths
-                
-            case .activeCasesFor100kHab:
-                return ($0.activeCasesFor100kHab ?? 0) > ($1.activeCasesFor100kHab ?? 0)
-                
-            case .deathsFor100kHab:
-                return ($0.deathsFor100kHab ?? 0) > ($1.deathsFor100kHab ?? 0)
-            }
-        }
+    func searchCountries(_ searchText: String) {
+        self.searchText = searchText
+    }
+    
+    func sortCountries(_ option: SortOption) {
+        self.sortOption = option
     }
     
     func didTapOnCountry(_ index: Int) {
-        let report = self.countriesReports[index]
+        let report = self.displayReports[index]
         self.router.showCountryCovidReport(report)
     }
     
+    func reportsSortCriteria(lhs: CountryCovidReport, rhs: CountryCovidReport) -> Bool {
+        switch sortOption {
+        case .countryName:
+            return lhs.countryName < rhs.countryName
+            
+        case .activeCases:
+            return lhs.activeCases > rhs.activeCases
+            
+        case .deaths:
+            return lhs.deaths > rhs.deaths
+            
+        case .activeCasesFor100kHab:
+            return (lhs.activeCasesFor100kHab ?? 0) > (rhs.activeCasesFor100kHab ?? 0)
+            
+        case .deathsFor100kHab:
+            return (lhs.deathsFor100kHab ?? 0) > (rhs.deathsFor100kHab ?? 0)
+        }
+    }
+    
+    func filterCriteria(_ report: CountryCovidReport) -> Bool {
+        if self.searchText.isEmpty { return true }
+        return report.countryName.lowercased().contains(self.searchText.lowercased())
+    }
+    
 }
-

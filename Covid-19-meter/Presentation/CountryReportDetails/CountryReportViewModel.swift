@@ -13,10 +13,10 @@ class CountryReportViewModel: CountryReportViewModelInputProtocol {
     
     var view: CountryReportViewModelOutputProtocol?
     
-    let countryReport: CountryCovidReport
-    var reportFields: [ReportFieldData] = [] {
+    private let countryReport: CountryCovidReport
+    private var reportFields: [ReportFieldData] = [] {
         didSet {
-            view?.update(reportFields: reportFields)
+            self.view?.update(reportFields: reportFields)
         }
     }
     
