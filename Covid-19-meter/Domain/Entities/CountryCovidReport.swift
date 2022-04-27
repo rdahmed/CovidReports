@@ -20,7 +20,12 @@ struct CountryCovidReport: Decodable {
         self.population = dto.population
         self.activeCases = dto.confirmed
         self.deaths = dto.deaths
-        self.lastUpdateDate = Date() // dto.updated // FIXME: Date formatter
+        
+        if let updated = dto.updated {
+            self.lastUpdateDate = Formatters.apiDate.date(from: updated)
+        } else {
+            self.lastUpdateDate = nil
+        }
     }
 }
 
